@@ -33,10 +33,6 @@ public class MRDriver extends Configured implements Tool {
         public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
             String line = value.toString();
             String[] parts = line.split(",");
-            System.out.println(line);
-            System.out.println(parts.length);
-            System.out.println(parts[1]);
-            System.out.println(parts[2]);
             if (parts.length == 3) {
                 String stock = parts[1];
                 long volume = Long.parseLong(parts[2]);
